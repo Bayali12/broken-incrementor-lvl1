@@ -1,0 +1,103 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: sans-serif;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to top, rgb(235, 51, 73), rgb(244, 92, 67));
+  gap: 10px;
+}
+
+/* counter */
+
+.counter {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.counterWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.valueWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  min-height: 40px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+
+.btn {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  transition: color 0.2s linear;
+}
+
+.btn:not(:disabled):hover {
+  background: white;
+  color: rgb(235, 51, 73);
+  cursor: pointer;
+}
+
+.btn:disabled {
+  border-color: rgb(57, 57, 57);
+  background-color: rgba(57, 57, 57, 0.24);
+  cursor: not-allowed;
+}
+
+.btn.rounded {
+  padding: 0;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+/* Loader */
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
