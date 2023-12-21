@@ -17,11 +17,13 @@ export default function App() {
   const isLoading = useSelector((state: RootState) => state.isLoading);
   const inputValue = useSelector((state: RootState) => state.input);
 
+  console.log(inputValue);
+
   const dispatch = useDispatch();
   const increment = () => dispatch(incrementAsync());
   const decrement = () => dispatch(decrementAsync());
-  const incrementByValue = () => dispatch(incrementByValueAsync(inputValue));
-  const decrementByValue = () => dispatch(decrementByValueAsync(inputValue));
+  const incrementByValue = () => inputValue && dispatch(incrementByValueAsync(inputValue));
+  const decrementByValue = () => inputValue && dispatch(decrementByValueAsync(inputValue));
   const setInputValue = (value: number) => dispatch(setInput(value));
 
   return (
